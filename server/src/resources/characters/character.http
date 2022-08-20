@@ -1,0 +1,2 @@
+### Get all characters
+GET http://localhost:3000/

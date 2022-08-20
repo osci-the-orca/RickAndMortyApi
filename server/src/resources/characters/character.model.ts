@@ -7,3 +7,4 @@ export interface Character {
     gender: string,
     image: string
 };
+
