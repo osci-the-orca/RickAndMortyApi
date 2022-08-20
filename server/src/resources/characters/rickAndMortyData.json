@@ -178,5 +178,14 @@
 		"type": "Human with ants in his eyes",
 		"gender": "Male",
 		"image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
+	},
+	{
+		"id": "yZqiJ9FqibxTLgDFLipxF",
+		"name": "Test character",
+		"status": "unknown",
+		"species": "Human",
+		"type": "Science experiment",
+		"gender": "Male",
+		"image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
 	}
 ]

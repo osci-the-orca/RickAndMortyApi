@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { nanoid } from "nanoid";
-import { characters } from "../dataHandler";
+import { characters, saveData } from "../dataHandler";
 import { Character } from "./character.model";
 
 export const getAllCharacters = (req: Request, res:Response) => {
@@ -14,6 +14,9 @@ export const createCharacter = (req: Request, res: Response) => {
         id: nanoid(),...req.body
     };
 
+    characters.push(character);
+
+    saveData('./src/resources/characters/rickAndMortyData.json');
     res.status(201).json(character);
 }
 
