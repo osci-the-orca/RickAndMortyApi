@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
+import { nanoid } from "nanoid";
 import { characters } from "../dataHandler";
+import { Character } from "./character.model";
 
 export const getAllCharacters = (req: Request, res:Response) => {
     //Todo load json file and send back array of all characters
@@ -8,7 +10,11 @@ export const getAllCharacters = (req: Request, res:Response) => {
 
 export const createCharacter = (req: Request, res: Response) => {
     //Todo create characther and send as json object.
-    res.status(201).json({});
+    const character: Character = {
+        id: nanoid(),...req.body
+    };
+
+    res.status(201).json(character);
 }
 
 export const deleteCharacter = (req: Request, res: Response) => {

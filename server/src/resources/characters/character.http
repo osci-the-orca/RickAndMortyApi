@@ -1,2 +1,15 @@
 ### Get all characters
 GET http://localhost:3000/
+
+### Post character
+POST http://localhost:3000/
+Content-Type: application/json
+
+{
+    "name": "Test character",
+    "status": "unknown",
+    "species": "Human",
+    "type": "Science experiment",
+    "gender": "Male",
+    "image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
+}
