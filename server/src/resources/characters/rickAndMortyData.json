@@ -180,10 +180,10 @@
 		"image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
 	},
 	{
-		"id": "yZqiJ9FqibxTLgDFLipxF",
-		"name": "Test character",
+		"id": "3ZN5c9nstIf467BAvtmVh",
+		"name": "updated test character",
 		"status": "unknown",
-		"species": "Human",
+		"species": "Dog",
 		"type": "Science experiment",
 		"gender": "Male",
 		"image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"

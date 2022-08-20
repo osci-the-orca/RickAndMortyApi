@@ -13,3 +13,19 @@ Content-Type: application/json
     "gender": "Male",
     "image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
 }
+
+### Delete character by id
+DELETE http://localhost:3000/yZqiJ9FqibxTLgDFLipxF
+
+### Update character 
+PUT http://localhost:3000/3ZN5c9nstIf467BAvtmVh
+Content-Type: application/json
+
+{
+    "name": "updated test character",
+    "status": "unknown",
+    "species": "Dog",
+    "type": "Science experiment",
+    "gender": "Male",
+    "image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
+}
