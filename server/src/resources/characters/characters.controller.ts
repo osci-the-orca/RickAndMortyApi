@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
+import { characters } from "../dataHandler";
 
 export const getAllCharacters = (req: Request, res:Response) => {
     //Todo load json file and send back array of all characters
-    res.status(200).json("TEST");
+    res.status(200).json(characters);
 }
 
 export const createCharacter = (req: Request, res: Response) => {
