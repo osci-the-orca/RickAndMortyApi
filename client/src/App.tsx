@@ -1,8 +1,9 @@
+import Characters from "./components/characters";
 
 function App() {
   return (
     <div className="App">
-    Hello World!
+    <Characters/>
     </div>
   );
 }

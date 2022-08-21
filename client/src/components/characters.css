@@ -1,0 +1,16 @@
+.character-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.character-info-div {
+    display: flex;
+    flex-direction: column;
+    background: red;
+    margin: 10px;
+}
+
+.name-div {
+    color: limegreen
+}
