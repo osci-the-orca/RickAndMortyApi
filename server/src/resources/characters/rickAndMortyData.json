@@ -187,5 +187,14 @@
 		"type": "Science experiment",
 		"gender": "Male",
 		"image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
+	},
+	{
+		"id": "TaKhlC-oyBWUJYPekUXKc",
+		"name": "Test character2",
+		"status": "unknown",
+		"species": "Human",
+		"type": "Science experiment",
+		"gender": "Male",
+		"image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
 	}
 ]

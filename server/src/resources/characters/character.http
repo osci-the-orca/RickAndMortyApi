@@ -1,12 +1,16 @@
 ### Get all characters
 GET http://localhost:3000/
 
+### Get character by id
+GET http://localhost:3000/pLmFEWkTaX-0ADC5w38Vh
+
+
 ### Post character
 POST http://localhost:3000/
 Content-Type: application/json
 
 {
-    "name": "Test character",
+    "name": "Test character2",
     "status": "unknown",
     "species": "Human",
     "type": "Science experiment",
