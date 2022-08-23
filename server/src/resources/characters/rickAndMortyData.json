@@ -178,23 +178,5 @@
 		"type": "Human with ants in his eyes",
 		"gender": "Male",
 		"image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
-	},
-	{
-		"id": "3ZN5c9nstIf467BAvtmVh",
-		"name": "updated test character",
-		"status": "unknown",
-		"species": "Dog",
-		"type": "Science experiment",
-		"gender": "Male",
-		"image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
-	},
-	{
-		"id": "TaKhlC-oyBWUJYPekUXKc",
-		"name": "Test character2",
-		"status": "unknown",
-		"species": "Human",
-		"type": "Science experiment",
-		"gender": "Male",
-		"image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
 	}
 ]

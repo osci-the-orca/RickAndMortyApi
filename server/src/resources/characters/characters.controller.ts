@@ -26,6 +26,8 @@ export const createCharacter = (req: Request, res: Response) => {
 
 export const deleteCharacter = (req: Request, res: Response) => {
 
+    console.log({req});
+
     const character = characters.find(x=> x.id === req.params.id)
 
     if(character) {

@@ -13,7 +13,28 @@ function Characters() {
       .then((data) => {
         setCharacters(data);
       });
-  }, []);
+  }, [selectedCharacter]);
+
+  function deleteCharacter() {
+    if (selectedCharacter) {
+      console.log({selectedCharacter})
+      fetch(`http://localhost:3000/${selectedCharacter.id}`, {
+        method: "DELETE",
+      });
+
+      //TO re-render when deleted. 
+      setSelectedCharacter(undefined);
+    }
+  }
+
+  // function updateCharacter() {
+  //   fetch(`http://localhost:3000/${selectedCharacter.id}`, {
+  //       method: "PUT",
+  //       headers: "Content-type: Application/json"
+  //     });
+  // }
+
+  
 
   const charactersElement = characters.map((item: Character) => {
     return (
@@ -38,7 +59,14 @@ function Characters() {
   return (
     <>
       <div className="character-container">{charactersElement}</div>
-      {selectedCharacter && <CharacterModal character={selectedCharacter} onHide={() => setSelectedCharacter(undefined)} />}
+      {selectedCharacter && (
+        <CharacterModal
+          character={selectedCharacter}
+          onHide={() => setSelectedCharacter(undefined)}
+          delete={deleteCharacter}
+          // update={updateCharacter}
+        />
+      )}
     </>
   );
 }

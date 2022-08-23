@@ -6,6 +6,8 @@ import Character from "../models/characterModel";
 interface Props {
   character: Character;
   onHide: () => void;
+  delete: () => void;
+  // update: () => void;
 }
 
 export default function CharacterModal(props: Props) {
@@ -20,6 +22,7 @@ export default function CharacterModal(props: Props) {
         <Modal.Title id="contained-modal-title-vcenter">
           <h1>{props.character.name}</h1>
         </Modal.Title>
+        asdasd
       </Modal.Header>
       <Modal.Body>
         <h2>{props.character.gender}</h2>
@@ -29,8 +32,11 @@ export default function CharacterModal(props: Props) {
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>CLOSE</Button>
-        <Button onClick={props.onHide}>DELETE</Button>
-        <Button onClick={props.onHide}>EDIT</Button>
+        <Button onClick={props.delete}>DELETE</Button>
+
+        {/* TODO: toggle bool, show form, in form submit button */}
+        {/* <Button onClick={props.update}>EDIT</Button> */}
+
       </Modal.Footer>
     </Modal>
   );
