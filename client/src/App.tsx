@@ -1,18 +1,14 @@
-import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Characters from "./components/characters";
-
-
+import CreateCharacterModal from "./components/createCharacterModal";
 
 function App() {
-
-  const [characters, setCharacters] = useState([]);
-
   return (
     <div className="App">
-    <Characters/>
+      <CreateCharacterModal />
+      <Characters />
     </div>
   );
 }
 
 export default App;
-

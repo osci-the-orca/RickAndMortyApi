@@ -178,5 +178,14 @@
 		"type": "Human with ants in his eyes",
 		"gender": "Male",
 		"image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
+	},
+	{
+		"id": "L5zimHDT0s_Ts8-tbkzL4",
+		"name": "asd",
+		"gender": "asd",
+		"status": "asd",
+		"type": "asd",
+		"image": "asdasd",
+		"species": "asd"
 	}
 ]

@@ -5,7 +5,7 @@ import { createCharacter, deleteCharacter, getAllCharacters, getCharacterById, u
 export const charactersRouter = express.Router()
 .get("/", getAllCharacters)
 .get("/:id", getCharacterById)
-.post("/",generateId, validateCharacterReqBody, createCharacter)
+.post("/", Logger, generateId, validateCharacterReqBody, createCharacter)
 .delete("/:id", deleteCharacter)
 .put("/:id", Logger, validateCharacterReqBody, updateCharacter);
 

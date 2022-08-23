@@ -63,7 +63,6 @@ export const validateCharacterReqBody = (req: Request, res: Response, next: Next
     const result = characterSchema.validate(req.body);
 
     if(result.error) {
-        console.log("HEJ");
         res.status(400).json(result.error.message);
     }
     else {

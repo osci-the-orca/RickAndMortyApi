@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 
 export const generateId = (req: Request, res: Response, next: NextFunction) => {
     req.body = {id: nanoid(),...req.body};
+    console.log(req.body);
     next();
 }
 

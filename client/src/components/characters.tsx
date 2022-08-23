@@ -18,7 +18,6 @@ function Characters() {
 
   function deleteCharacter() {
     if (selectedCharacter) {
-      console.log({ selectedCharacter });
       fetch(`http://localhost:3000/${selectedCharacter.id}`, {
         method: "DELETE",
       });
@@ -33,7 +32,7 @@ function Characters() {
       fetch(`http://localhost:3000/${character.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(character)
+        body: JSON.stringify(character),
       });
     }
     setSelectedCharacter(undefined);
