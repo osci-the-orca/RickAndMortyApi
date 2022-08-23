@@ -10,7 +10,7 @@ POST http://localhost:3000/
 Content-Type: application/json
 
 {
-    "name": "Test character2",
+    "name": "Test character 3",
     "status": "unknown",
     "species": "Human",
     "type": "Science experiment",
@@ -26,6 +26,7 @@ PUT http://localhost:3000/3ZN5c9nstIf467BAvtmVh
 Content-Type: application/json
 
 {
+    "id": "3ZN5c9nstIf467BAvtmVh",
     "name": "updated test character",
     "status": "unknown",
     "species": "Dog",

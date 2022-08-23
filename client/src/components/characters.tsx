@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
+import Character from "../models/characterModel";
+import CharacterModal from "./characterModal";
 import "./characters.css";
 
 function Characters() {
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState<Character[]>([]);
+  const [selectedCharacter, setSelectedCharacter] = useState<Character>();
+
   useEffect(() => {
     fetch("http://localhost:3000/")
       .then((response) => response.json())
@@ -11,13 +15,13 @@ function Characters() {
       });
   }, []);
 
-const handleClick = (e) => {
-    
-}
-
-  const charactersElement = characters.map((item: any) => {
+  const charactersElement = characters.map((item: Character) => {
     return (
-      <div key={item.id} className="character-card" onClick={handleClick}>
+      <div
+        key={item.id}
+        className="character-card"
+        onClick={() => setSelectedCharacter(item)}
+      >
         <div className="character-info-div">
           <div>
             <img src={item.image} />
@@ -31,7 +35,12 @@ const handleClick = (e) => {
       </div>
     );
   });
-  return <div className="character-container">{charactersElement}</div>;
+  return (
+    <>
+      <div className="character-container">{charactersElement}</div>
+      {selectedCharacter && <CharacterModal character={selectedCharacter} onHide={() => setSelectedCharacter(undefined)} />}
+    </>
+  );
 }
 
 export default Characters;

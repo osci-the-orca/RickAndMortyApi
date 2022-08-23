@@ -8,7 +8,8 @@
     display: flex;
     flex-direction: column;
     background: red;
-    margin: 10px;
+    margin: 15px;
+    width: auto;
 }
 
 .name-div {
