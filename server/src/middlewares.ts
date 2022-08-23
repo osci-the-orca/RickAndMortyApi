@@ -6,6 +6,12 @@ export const generateId = (req: Request, res: Response, next: NextFunction) => {
     next();
 }
 
+export const Logger = (req: Request, res: Response, next: NextFunction) => {
+    console.log(req.path);
+    console.log(req.method);
+    console.log(req.body);
+    next();
+}
 
 export const notFoundHandler = (req: Request, res: Response, next: NextFunction) => {
     res.status(404).json("The resource do not exist.");

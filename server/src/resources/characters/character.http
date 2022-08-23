@@ -22,12 +22,12 @@ Content-Type: application/json
 DELETE http://localhost:3000/yZqiJ9FqibxTLgDFLipxF
 
 ### Update character 
-PUT http://localhost:3000/3ZN5c9nstIf467BAvtmVh
+PUT http://localhost:3000/YsKkISPQPbQdxYM7xUUjt
 Content-Type: application/json
 
 {
-    "id": "3ZN5c9nstIf467BAvtmVh",
-    "name": "updated test character",
+    "id": "YsKkISPQPbQdxYM7xUUjt",
+    "name": "updated character",
     "status": "unknown",
     "species": "Dog",
     "type": "Science experiment",

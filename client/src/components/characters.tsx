@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import Character from "../models/characterModel";
 import CharacterModal from "./characterModal";
 import "./characters.css";
@@ -17,24 +18,26 @@ function Characters() {
 
   function deleteCharacter() {
     if (selectedCharacter) {
-      console.log({selectedCharacter})
+      console.log({ selectedCharacter });
       fetch(`http://localhost:3000/${selectedCharacter.id}`, {
         method: "DELETE",
       });
 
-      //TO re-render when deleted. 
+      //TO re-render when deleted.
       setSelectedCharacter(undefined);
     }
   }
 
-  // function updateCharacter() {
-  //   fetch(`http://localhost:3000/${selectedCharacter.id}`, {
-  //       method: "PUT",
-  //       headers: "Content-type: Application/json"
-  //     });
-  // }
-
-  
+  function updateCharacter(character: Character) {
+    if (character) {
+      fetch(`http://localhost:3000/${character.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(character)
+      });
+    }
+    setSelectedCharacter(undefined);
+  }
 
   const charactersElement = characters.map((item: Character) => {
     return (
@@ -64,7 +67,7 @@ function Characters() {
           character={selectedCharacter}
           onHide={() => setSelectedCharacter(undefined)}
           delete={deleteCharacter}
-          // update={updateCharacter}
+          update={updateCharacter}
         />
       )}
     </>
