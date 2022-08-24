@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Character from "../models/characterModel";
@@ -15,11 +15,23 @@ interface Props {
 
 export default function CharacterModal(props: Props) {
   const [formIsVisible, setFormIsVisible] = useState(false);
-  const [character, setCharacter] = useState(props.character);
+  const [character, setCharacter] = useState<Character>();
 
   function handleChange(e: any) {
-    setCharacter({ ...character, [e.target.name]: e.target.value });
+    if (character) {
+      setCharacter({ ...character, [e.target.name]: e.target.value });
+    }
   }
+
+  useEffect(() => {
+    {
+      fetch(`http://localhost:3000/${props.character.id}`)
+        .then((response) => response.json())
+        .then((data) => {
+          setCharacter(data);
+        });
+    }
+  }, []);
 
   return (
     <Modal
@@ -96,9 +108,14 @@ export default function CharacterModal(props: Props) {
                 />
               </Form.Group>
 
-              <Button variant="primary" onClick={() => props.update(character)}>
-                Update
-              </Button>
+              {character && (
+                <Button
+                  variant="primary"
+                  onClick={() => props.update(character)}
+                >
+                  Update
+                </Button>
+              )}
             </Form>
           </div>
         ) : (
@@ -114,7 +131,14 @@ export default function CharacterModal(props: Props) {
         <Button onClick={props.onHide}>CLOSE</Button>
         {!formIsVisible && <Button onClick={props.delete}>DELETE</Button>}
         {/* TODO: toggle bool, show form, in form submit button */}
-        <Button onClick={() => setFormIsVisible(!formIsVisible)}>EDIT</Button>
+        <Button
+          onClick={() => {
+            setFormIsVisible(!formIsVisible);
+            setCharacter(props.character);
+          }}
+        >
+          EDIT
+        </Button>
       </Modal.Footer>
     </Modal>
   );
