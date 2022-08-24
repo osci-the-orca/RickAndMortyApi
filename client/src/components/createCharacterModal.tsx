@@ -86,7 +86,7 @@ export default function CreateCharacterModal() {
                 variant="primary"
                 onClick={() => createCharacter(character)}
               >
-                Update
+                Create
               </Button>
             </Form>
           </Modal.Body>

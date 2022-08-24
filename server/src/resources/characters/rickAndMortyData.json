@@ -180,12 +180,12 @@
 		"image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
 	},
 	{
-		"id": "L5zimHDT0s_Ts8-tbkzL4",
-		"name": "asd",
-		"gender": "asd",
-		"status": "asd",
-		"type": "asd",
-		"image": "asdasd",
-		"species": "asd"
+		"id": "VKXGFwjk-S7_VkxyStUvB",
+		"name": "Olle",
+		"gender": "male",
+		"status": "alive",
+		"species": "human",
+		"type": "big boy from space",
+		"image": "url.com"
 	}
 ]

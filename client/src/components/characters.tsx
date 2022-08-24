@@ -47,7 +47,7 @@ function Characters() {
       >
         <div className="character-info-div">
           <div>
-            <img src={item.image} />
+            <img src={item.image} height="100px" />
           </div>
           <div className="name-div">Name: {item.name}</div>
           <div>Species: {item.species}</div>
