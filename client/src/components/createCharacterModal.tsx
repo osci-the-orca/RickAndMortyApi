@@ -36,7 +36,9 @@ export default function CreateCharacterModal(props: Props) {
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           centered
-          onHide={() => setShowCreateCharacter(false)}
+          onHide={() => {
+            setShowCreateCharacter(false);
+          }}
         >
           <Modal.Header>Create a new character</Modal.Header>
           <Modal.Body>
@@ -91,7 +93,11 @@ export default function CreateCharacterModal(props: Props) {
               </Form.Group>
               <Button
                 variant="primary"
-                onClick={() => createCharacter(character)}
+                onClick={() => {
+                  createCharacter(character);
+                  setShowCreateCharacter(false);
+                  // console.log(showCreateCharacter);
+                }}
               >
                 Create
               </Button>
