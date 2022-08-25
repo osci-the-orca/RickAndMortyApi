@@ -42,13 +42,11 @@ export const deleteCharacter = (req: Request, res: Response, next: NextFunction)
 
         res.status(200).json(character);
     }
-    next();
-    // else res.status(404).json("no character with that id exists");
+    else next();
 };
 
-export const updateCharacter = (req: Request, res: Response) => {
+export const updateCharacter = (req: Request, res: Response, next: NextFunction) => {
     
-    console.log(req.path);
     const id = req.params.id
     const character = characters.find(x => x.id === id);
 
@@ -60,7 +58,7 @@ export const updateCharacter = (req: Request, res: Response) => {
         saveData("./src/resources/characters/rickAndMortyData.json")
         res.status(200).json(characters[index]);
     }
-    else res.status(404).json("no character with that id");
+    else next();
 }
 
 export const validateCharacterReqBody = (req: Request, res: Response, next: NextFunction) => {
