@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
+import "./characterModal.css";
 
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
@@ -34,16 +35,9 @@ export default function CharacterModal(props: Props) {
   }, []);
 
   return (
-    <Modal
-      show
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
+    <Modal show aria-labelledby="contained-modal-title-vcenter" centered>
       <Modal.Header closeButton onClick={props.onHide}>
-        <Modal.Title id="contained-modal-title-vcenter">
-          <h1>{props.character.name}</h1>
-        </Modal.Title>
+        <img className="modal-character-img" src={props.character.image} />
       </Modal.Header>
       <Modal.Body>
         {formIsVisible ? (
@@ -119,12 +113,32 @@ export default function CharacterModal(props: Props) {
             </Form>
           </div>
         ) : (
-          <>
-            <h2>{props.character.gender}</h2>
-            <h2>{props.character.species}</h2>
-            <h2>{props.character.type}</h2>
-            <h2>{props.character.status}</h2>
-          </>
+          <div className="flex">
+            <div className="modal-character-info-div">
+              <div>
+                <span>Name: </span>
+                {props.character.name}
+              </div>
+              <div>
+                <span>Gender: </span>
+                {props.character.gender}
+              </div>
+              <div>
+                <span>Species: </span>
+                {props.character.species}
+              </div>
+              {props.character.type && (
+                <div>
+                  <span>Type: </span>
+                  {props.character.type}
+                </div>
+              )}
+              <div>
+                <span>Status: </span>
+                {props.character.status}
+              </div>
+            </div>
+          </div>
         )}
       </Modal.Body>
       <Modal.Footer>
