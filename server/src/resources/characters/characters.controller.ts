@@ -17,6 +17,11 @@ export const getCharacterById = (req: Request, res: Response, next: NextFunction
 }
 
 export const createCharacter = (req: Request, res: Response) => {
+
+    if(!req.body.image || !req.body.image.includes(".jpg") || !req.body.image.includes(".png"))
+    {
+        req.body.image = "https://rickandmortyapi.com/api/character/avatar/19.jpeg";
+    }
     
     characters.push(req.body);
 
@@ -24,7 +29,7 @@ export const createCharacter = (req: Request, res: Response) => {
     res.status(201).json(req.body);
 };
 
-export const deleteCharacter = (req: Request, res: Response) => {
+export const deleteCharacter = (req: Request, res: Response, next: NextFunction) => {
 
     const character = characters.find(x=> x.id === req.params.id)
 
@@ -37,7 +42,8 @@ export const deleteCharacter = (req: Request, res: Response) => {
 
         res.status(200).json(character);
     }
-    else res.status(404).json("no character with that id exists");
+    next();
+    // else res.status(404).json("no character with that id exists");
 };
 
 export const updateCharacter = (req: Request, res: Response) => {

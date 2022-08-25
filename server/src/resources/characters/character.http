@@ -2,7 +2,7 @@
 GET http://localhost:3000/
 
 ### Get character by id
-GET http://localhost:3000/pLmFEWkTaX-0ADC5w38Vh
+GET http://localhost:3000/GnderSY3e
 
 
 ### Post character
@@ -19,14 +19,14 @@ Content-Type: application/json
 }
 
 ### Delete character by id
-DELETE http://localhost:3000/yZqiJ9FqibxTLgDFLipxF
+DELETE http://localhost:3000/GnderSY
 
 ### Update character 
-PUT http://localhost:3000/YsKkISPQPbQdxYM7xUUjt
+PUT http://localhost:3000/WhG1moB4Py3-vADbE_cQC
 Content-Type: application/json
 
 {
-    "id": "YsKkISPQPbQdxYM7xUUjt",
+    "id": "WhG1moB4Py3-vADbE_cQC",
     "name": "updated character",
     "status": "unknown",
     "species": "Dog",

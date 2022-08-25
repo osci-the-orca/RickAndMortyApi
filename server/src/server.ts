@@ -16,7 +16,7 @@ app.use(cors());
 app.use(Logger);
 
 
-app.use("/",charactersRouter);
+app.use("/api/characters",charactersRouter);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
