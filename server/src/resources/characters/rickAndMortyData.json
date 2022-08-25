@@ -178,14 +178,5 @@
 		"type": "Human with ants in his eyes",
 		"gender": "Male",
 		"image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
-	},
-	{
-		"id": "VKXGFwjk-S7_VkxyStUvB",
-		"name": "Olle123",
-		"gender": "male",
-		"status": "alive",
-		"species": "human",
-		"type": "big boy from space",
-		"image": "url.com"
 	}
 ]

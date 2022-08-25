@@ -2,16 +2,23 @@ import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import Character from "../models/characterModel";
 
-export default function CreateCharacterModal() {
+interface Props {
+  onNewCharacter: (character: Character) => void;
+}
+
+export default function CreateCharacterModal(props: Props) {
   const [showCreateCharacter, setShowCreateCharacter] = useState(false);
   const [character, setCharacter] = useState({} as Character);
 
-  function createCharacter(character: Character) {
-    fetch("http://localhost:3000/", {
+  async function createCharacter(character: Character) {
+    const response = await fetch("http://localhost:3000/", {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(character),
     });
+
+    const resultCharacter = await response.json();
+    props.onNewCharacter(resultCharacter);
   }
 
   function handleChange(e: any) {

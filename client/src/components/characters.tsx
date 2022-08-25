@@ -1,20 +1,21 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Character from "../models/characterModel";
 import CharacterModal from "./characterModal";
 import "./characters.css";
 
-function Characters() {
-  const [characters, setCharacters] = useState<Character[]>([]);
-  const [selectedCharacter, setSelectedCharacter] = useState<Character>();
+interface Props {
+  characters: Character[];
+  onUpdateCharacter: (character: Character) => void;
+  onDeleteCharacter: (character: Character) => void;
+}
 
-  useEffect(() => {
-    fetch("http://localhost:3000/")
-      .then((response) => response.json())
-      .then((data) => {
-        setCharacters(data);
-      });
-  }, [selectedCharacter]);
+function Characters({
+  characters,
+  onUpdateCharacter,
+  onDeleteCharacter,
+}: Props) {
+  const [selectedCharacter, setSelectedCharacter] = useState<Character>();
 
   function deleteCharacter() {
     if (selectedCharacter) {
@@ -24,6 +25,7 @@ function Characters() {
 
       //TO re-render when deleted.
       setSelectedCharacter(undefined);
+      onDeleteCharacter(selectedCharacter);
     }
   }
 
@@ -36,6 +38,8 @@ function Characters() {
       });
     }
     setSelectedCharacter(undefined);
+
+    onUpdateCharacter(character);
   }
 
   const charactersElement = characters.map((item: Character) => {
@@ -45,15 +49,27 @@ function Characters() {
         className="character-card"
         onClick={() => setSelectedCharacter(item)}
       >
+        <div className="character-img-div">
+          <img className="character-img" src={item.image} />
+        </div>
         <div className="character-info-div">
-          <div>
-            <img className="character-img" src={item.image} />
+          <div className="name-div">
+            <span>Name:</span> {item.name}
           </div>
-          <div className="name-div">Name: {item.name}</div>
-          <div>Species: {item.species}</div>
-          <div>Status: {item.status}</div>
-          {item.type && <div>Type: {item.type}</div>}
-          <div>Gender: {item.gender}</div>
+          <div>
+            <span>Species:</span> {item.species}
+          </div>
+          <div>
+            <span>Status:</span> {item.status}
+          </div>
+          {item.type && (
+            <div>
+              <span>Type:</span> {item.type}
+            </div>
+          )}
+          <div>
+            <span>Gender:</span> {item.gender}
+          </div>
         </div>
       </div>
     );
