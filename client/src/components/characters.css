@@ -2,20 +2,39 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 1rem;
+    
+}
+
+.character-card {
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .character-info-div {
     display: flex;
     flex-direction: column;
     background: white;
-    margin: 15px;
     width: auto;
+    padding: 10px;
+    height: 100%;   
+}
+.character-info-div span {
+    font-weight: bold;
 }
 
 .name-div {
     color: limegreen
 }
 
-.charcter-img {
-    width: 200px;
+.character-img-div {
+    border: none;
+    border-radius: 10px;
 }
+
+
+.character-img {
+}
+

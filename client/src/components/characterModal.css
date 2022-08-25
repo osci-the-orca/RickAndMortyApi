@@ -1,0 +1,44 @@
+.modal-character-info-div {
+    font-size: x-large;
+}
+
+.modal-character-info-div span {
+    font-weight: bold;
+}
+
+
+.modal-character-img-div img {
+    width: 100px;
+    margin-left: 100px;
+}
+
+.flex {
+    display: flex;
+}
+
+/* overridar bootstrap modal styleing, verkar inte behöva !important */
+.modal-header {
+    padding: 0 !important;
+    overflow: hidden !important
+}
+
+.modal-header img {
+    width: 100%;
+}
+
+.modal-header .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: .5;
+}
+
+.modal-footer {
+    justify-content: center;
+}
+
+.modal-footer .btn {
+    background-color: aquamarine;
+    color: black;
+}
+
