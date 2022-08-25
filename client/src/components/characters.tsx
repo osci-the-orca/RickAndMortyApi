@@ -19,7 +19,7 @@ function Characters({
 
   function deleteCharacter() {
     if (selectedCharacter) {
-      fetch(`http://localhost:3000/${selectedCharacter.id}`, {
+      fetch(`http://localhost:3000/api/characters/${selectedCharacter.id}`, {
         method: "DELETE",
       });
 
@@ -31,7 +31,7 @@ function Characters({
 
   function updateCharacter(character: Character) {
     if (character) {
-      fetch(`http://localhost:3000/${character.id}`, {
+      fetch(`http://localhost:3000/api/characters/${character.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(character),

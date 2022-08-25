@@ -26,7 +26,7 @@ export default function CharacterModal(props: Props) {
 
   useEffect(() => {
     {
-      fetch(`http://localhost:3000/${props.character.id}`)
+      fetch(`http://localhost:3000/api/characters/${props.character.id}`)
         .then((response) => response.json())
         .then((data) => {
           setCharacter(data);

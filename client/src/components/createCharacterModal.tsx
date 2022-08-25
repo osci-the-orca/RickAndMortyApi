@@ -11,14 +11,17 @@ export default function CreateCharacterModal(props: Props) {
   const [character, setCharacter] = useState({} as Character);
 
   async function createCharacter(character: Character) {
-    const response = await fetch("http://localhost:3000/", {
+    const response = await fetch("http://localhost:3000/api/characters", {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(character),
     });
 
     const resultCharacter = await response.json();
-    props.onNewCharacter(resultCharacter);
+
+    if (!resultCharacter.name) {
+      console.log("funka");
+    } else props.onNewCharacter(resultCharacter);
   }
 
   function handleChange(e: any) {
@@ -42,13 +45,14 @@ export default function CreateCharacterModal(props: Props) {
         >
           <Modal.Header>Create a new character</Modal.Header>
           <Modal.Body>
-            <Form>
+            <Form validated>
               <Form.Group>
                 <Form.Control
                   onChange={handleChange}
                   name="name"
                   type="text"
                   placeholder="Name"
+                  required
                 />
               </Form.Group>
               <Form.Group>
@@ -57,6 +61,7 @@ export default function CreateCharacterModal(props: Props) {
                   name="gender"
                   type="text"
                   placeholder="Gender"
+                  required
                 />
               </Form.Group>
               <Form.Group>
@@ -65,6 +70,7 @@ export default function CreateCharacterModal(props: Props) {
                   name="status"
                   type="text"
                   placeholder="Status"
+                  required
                 />
               </Form.Group>
               <Form.Group>
@@ -73,6 +79,7 @@ export default function CreateCharacterModal(props: Props) {
                   name="species"
                   type="text"
                   placeholder="Species"
+                  required
                 />
               </Form.Group>
               <Form.Group>
@@ -81,6 +88,7 @@ export default function CreateCharacterModal(props: Props) {
                   name="type"
                   type="text"
                   placeholder="Type"
+                  required
                 />
               </Form.Group>
               <Form.Group>
@@ -96,7 +104,6 @@ export default function CreateCharacterModal(props: Props) {
                 onClick={() => {
                   createCharacter(character);
                   setShowCreateCharacter(false);
-                  // console.log(showCreateCharacter);
                 }}
               >
                 Create
