@@ -77,7 +77,7 @@ export default function CharacterModal(props: Props) {
 
               <Form.Group className="mb-2">
                 <Form.Label>Image url</Form.Label>
-                <Form.Control required name="image" type="text" defaultValue={props.character.image} onChange={handleChange} />
+                <Form.Control name="image" type="text" defaultValue={props.character.image} onChange={handleChange} />
               </Form.Group>
 
               {character && (

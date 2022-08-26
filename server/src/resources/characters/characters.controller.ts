@@ -18,7 +18,7 @@ export const getCharacterById = (req: Request, res: Response, next: NextFunction
 
 export const createCharacter = async (req: Request, res: Response) => {
 
-    if(!req.body.image || !req.body.image.includes(".jpg") && !req.body.image.includes(".png")) {
+    if(!req.body.image || !req.body.image.includes(".jpg") && !req.body.image.includes(".png") && req.body.image === "") {
         req.body.image = "https://rickandmortyapi.com/api/character/avatar/19.jpeg";
     }
     
@@ -47,6 +47,10 @@ export const deleteCharacter = async (req: Request, res: Response, next: NextFun
 export const updateCharacter = async (req: Request, res: Response, next: NextFunction) => {
     
     const character = characters.find(x => x.id === req.params.id);
+
+     if(!req.body.image || !req.body.image.includes(".jpg") && !req.body.image.includes(".png") && req.body.image === "") {
+        req.body.image = "https://rickandmortyapi.com/api/character/avatar/19.jpeg";
+    }
 
     if(character){
         const index = characters.indexOf(character);

@@ -196,23 +196,5 @@
 		"type": "Science experiment",
 		"gender": "Male",
 		"image": "https://rickandmortyapi.com/api/character/avatar/19.jpeg"
-	},
-	{
-		"id": "yyWpmCDsZwOi2eC8NaduU",
-		"name": "asd",
-		"gender": "asd",
-		"status": "asd",
-		"species": "asd",
-		"type": "asd",
-		"image": "https://www.google.se/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png"
-	},
-	{
-		"id": "gURNMKlwpQxpmFNB1HQAU",
-		"image": "https://rickandmortyapi.com/api/character/avatar/19.jpeg",
-		"name": "aaaa",
-		"gender": "a",
-		"status": "a",
-		"species": "a",
-		"type": "a"
 	}
 ]
