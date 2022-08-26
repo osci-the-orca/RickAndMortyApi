@@ -28,8 +28,8 @@
 
 .modal-header .btn-close {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 0.7rem;
+    right: 0.7rem;
     opacity: .5;
 }
 
