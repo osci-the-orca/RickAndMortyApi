@@ -35,7 +35,7 @@ export default function CharacterModal(props: Props) {
   }, []);
 
   return (
-    <Modal show aria-labelledby="contained-modal-title-vcenter" centered>
+    <Modal onHide={props.onHide} show aria-labelledby="contained-modal-title-vcenter" centered>
       <Modal.Header closeButton onClick={props.onHide}>
         <img className="modal-character-img" src={props.character.image} />
       </Modal.Header>
@@ -45,68 +45,35 @@ export default function CharacterModal(props: Props) {
             <Form>
               <Form.Group className="mb-3">
                 <Form.Label>Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  defaultValue={props.character.name}
-                  name="name"
-                  onChange={handleChange}
-                />
+                <Form.Control type="text" defaultValue={props.character.name} name="name" onChange={handleChange} />
               </Form.Group>
               <Form.Group className="mb-2">
                 <Form.Label>Gender</Form.Label>
-                <Form.Control
-                  name="gender"
-                  type="text"
-                  defaultValue={props.character.gender}
-                  onChange={handleChange}
-                />
+                <Form.Control name="gender" type="text" defaultValue={props.character.gender} onChange={handleChange} />
               </Form.Group>
               <Form.Group className="mb-2">
                 <Form.Label>Status</Form.Label>
-                <Form.Control
-                  name="status"
-                  type="text"
-                  defaultValue={props.character.status}
-                  onChange={handleChange}
-                />
+                <Form.Control name="status" type="text" defaultValue={props.character.status} onChange={handleChange} />
               </Form.Group>
               <Form.Group className="mb-2">
                 <Form.Label>Species</Form.Label>
-                <Form.Control
-                  name="species"
-                  type="text"
-                  defaultValue={props.character.species}
-                  onChange={handleChange}
-                />
+                <Form.Control name="species" type="text" defaultValue={props.character.species} onChange={handleChange} />
               </Form.Group>
 
               {props.character.type && (
                 <Form.Group className="mb-2">
                   <Form.Label>Type</Form.Label>
-                  <Form.Control
-                    name="type"
-                    type="text"
-                    defaultValue={props.character.type}
-                    onChange={handleChange}
-                  />
+                  <Form.Control name="type" type="text" defaultValue={props.character.type} onChange={handleChange} />
                 </Form.Group>
               )}
 
               <Form.Group className="mb-2">
                 <Form.Label>Image url</Form.Label>
-                <Form.Control
-                  name="image"
-                  type="text"
-                  defaultValue={props.character.image}
-                  onChange={handleChange}
-                />
+                <Form.Control name="image" type="text" defaultValue={props.character.image} onChange={handleChange} />
               </Form.Group>
 
               {character && (
-                <Button
-                  variant="primary"
-                  onClick={() => props.update(character)}
-                >
+                <Button variant="primary" onClick={() => props.update(character)}>
                   Update
                 </Button>
               )}
@@ -142,17 +109,21 @@ export default function CharacterModal(props: Props) {
         )}
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>CLOSE</Button>
-        {!formIsVisible && <Button onClick={props.delete}>DELETE</Button>}
+        {/* <Button onClick={props.onHide}>CLOSE</Button> */}
+        {!formIsVisible && (
+          <>
+            <Button onClick={props.delete}>DELETE</Button>
+            <Button
+              onClick={() => {
+                setFormIsVisible(!formIsVisible);
+                setCharacter(props.character);
+              }}
+            >
+              EDIT
+            </Button>
+          </>
+        )}
         {/* TODO: toggle bool, show form, in form submit button */}
-        <Button
-          onClick={() => {
-            setFormIsVisible(!formIsVisible);
-            setCharacter(props.character);
-          }}
-        >
-          EDIT
-        </Button>
       </Modal.Footer>
     </Modal>
   );
