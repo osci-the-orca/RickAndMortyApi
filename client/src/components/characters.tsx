@@ -19,7 +19,6 @@ function Characters({ characters, onUpdateCharacter, onDeleteCharacter }: Props)
         method: "DELETE",
       });
 
-      //TO re-render when deleted.
       setSelectedCharacter(undefined);
       onDeleteCharacter(selectedCharacter);
     }
@@ -67,7 +66,7 @@ function Characters({ characters, onUpdateCharacter, onDeleteCharacter }: Props)
     );
   });
   return (
-    <>
+    <div className="main-container">
       <div className="character-container">{charactersElement}</div>
       {selectedCharacter && (
         <CharacterModal
@@ -77,7 +76,7 @@ function Characters({ characters, onUpdateCharacter, onDeleteCharacter }: Props)
           update={updateCharacter}
         />
       )}
-    </>
+    </div>
   );
 }
 
