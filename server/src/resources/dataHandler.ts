@@ -18,18 +18,15 @@ export function readData(filePath: string, callback: Function) {
   });
 }
 
-readData(
-  "./src/resources/characters/rickAndMortyData.json",
-  (err: string, data: Character[]) => {
-    if (err) {
-      console.log(err);
-    } else {
-      characters.push(...data);
-    }
+readData("./src/resources/characters/rickAndMortyData.json", (err: string, data: Character[]) => {
+  if (err) {
+    console.log(err);
+  } else {
+    characters.push(...data);
   }
-);
+});
 
-export function saveData(filePath: string) {
+export async function saveData(filePath: string) {
   const charactersString = JSON.stringify(characters, null, "\t");
 
   fs.writeFile(filePath, charactersString, (err) => {
