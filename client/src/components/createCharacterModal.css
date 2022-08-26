@@ -1,3 +1,75 @@
+.header-modal {
+    padding: 20px 15px !important;
+    justify-content: center;
+}
+
+.modal-body {
+    background-color: white;
+    border-style: none;
+    border-radius: 10px;
+}
+
+.modal-add-character-btn {
+        background-color: #36A9AE;
+        background-image: linear-gradient(#37ADB2, #329CA0);
+        border: 1px solid #7be470;
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, 0.12) 0 1px 1px;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: block;
+        margin: 3rem auto !important;
+        text-align: center;
+        width: 10rem; 
+}
+
+.modal-add-character-btn:hover {
+    box-shadow: rgba(82, 201, 71, 0.3) 0 0 10px inset, rgba(0, 0, 0, ) 0 1px 2px !important;
+    text-decoration: none !important;
+    transition-duration: .15s, .15s !important;
+}
+
 .create-character-form {
-    background-color: red;
+    background-color: white;  
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+}
+
+.create-character-form-label {
+    display:none;
+}
+
+.create-character-form-input {
+    border-style: none;
+    border-radius: 0px;
+    border-bottom: 2px solid aqua !important;
+    width: 300px;
+}
+
+/* remove ugly bootstrapstyling on forms */
+.create-character-form-input.is-valid,
+.was-validated .form-control:valid {
+    background-image: none !important;
+    border-color: #00ff4c !important;
+    padding-right: 40px !important;
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+    background-image: none !important;
+    border-color: #ff0d00 !important;
+    padding-right: 0.75em;
+}
+
+.create-character-form-input.is-valid:focus,
+.was-validated .form-control:valid:focus {
+    box-shadow: none; 
+}
+
+.form-control.is-invalid:focus,
+.was-validated .form-control:invalid:focus {
+    box-shadow: none;
 }
