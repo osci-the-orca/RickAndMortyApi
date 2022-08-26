@@ -178,5 +178,41 @@
 		"type": "Human with ants in his eyes",
 		"gender": "Male",
 		"image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
+	},
+	{
+		"id": "EIlSscMphMTwgvrsYN9XB",
+		"name": "New character",
+		"status": "unknown",
+		"species": "Human",
+		"type": "Science experiment",
+		"gender": "Male",
+		"image": "https://rickandmortyapi.com/api/character/avatar/19.jpeg"
+	},
+	{
+		"id": "kba2ojrm_JSEi0j36WHDY",
+		"name": "New character 2",
+		"status": "unknown",
+		"species": "Human",
+		"type": "Science experiment",
+		"gender": "Male",
+		"image": "https://rickandmortyapi.com/api/character/avatar/19.jpeg"
+	},
+	{
+		"id": "yyWpmCDsZwOi2eC8NaduU",
+		"name": "asd",
+		"gender": "asd",
+		"status": "asd",
+		"species": "asd",
+		"type": "asd",
+		"image": "https://www.google.se/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png"
+	},
+	{
+		"id": "gURNMKlwpQxpmFNB1HQAU",
+		"image": "https://rickandmortyapi.com/api/character/avatar/19.jpeg",
+		"name": "aaaa",
+		"gender": "a",
+		"status": "a",
+		"species": "a",
+		"type": "a"
 	}
 ]
