@@ -9,7 +9,6 @@ interface Props {
 }
 
 export default function CreateCharacterModal(props: Props) {
-  const [showCreateCharacter, setShowCreateCharacter] = useState(false);
   const [character, setCharacter] = useState({} as Character);
 
   async function createCharacter(character: Character) {
@@ -40,29 +39,37 @@ export default function CreateCharacterModal(props: Props) {
 
   return (
     <>
-      <Modal.Header>Create a new character</Modal.Header>
+      <Modal.Header className="header-modal">
+        <div>Add Character</div>
+      </Modal.Header>
       <Modal.Body>
         <Form className="create-character-form" validated onSubmit={handleSubmit}>
-          <Form.Group>
-            <Form.Control onChange={handleChange} name="name" type="text" placeholder="Name" required />
+          <Form.Group className="input">
+            <Form.Label className="create-character-form-label">Name</Form.Label>
+            <Form.Control className="create-character-form-input" onChange={handleChange} name="name" type="text" placeholder="Name" required />
           </Form.Group>
-          <Form.Group>
-            <Form.Control onChange={handleChange} name="gender" type="text" placeholder="Gender" required />
+          <Form.Group className="input">
+            <Form.Label className="create-character-form-label">Gender</Form.Label>
+            <Form.Control className="create-character-form-input" onChange={handleChange} name="gender" type="text" placeholder="Gender" required />
           </Form.Group>
-          <Form.Group>
-            <Form.Control onChange={handleChange} name="status" type="text" placeholder="Status" required />
+          <Form.Group className="input">
+            <Form.Label className="create-character-form-label">Status</Form.Label>
+            <Form.Control className="create-character-form-input" onChange={handleChange} name="status" type="text" placeholder="Status" required />
           </Form.Group>
-          <Form.Group>
-            <Form.Control onChange={handleChange} name="species" type="text" placeholder="Species" required />
+          <Form.Group className="input">
+            <Form.Label className="create-character-form-label">Species</Form.Label>
+            <Form.Control className="create-character-form-input" onChange={handleChange} name="species" type="text" placeholder="Species" required />
           </Form.Group>
-          <Form.Group>
-            <Form.Control onChange={handleChange} name="type" type="text" placeholder="Type" required />
+          <Form.Group className="input">
+            <Form.Label className="create-character-form-label">Type</Form.Label>
+            <Form.Control className="create-character-form-input" onChange={handleChange} name="type" type="text" placeholder="Type" required />
           </Form.Group>
-          <Form.Group>
-            <Form.Control onChange={handleChange} name="image" type="url" placeholder="Image url" />
+          <Form.Group className="input">
+            <Form.Label className="create-character-form-label">Image url</Form.Label>
+            <Form.Control className="create-character-form-input" onChange={handleChange} name="image" type="url" placeholder="Image url" />
           </Form.Group>
-          <Button variant="primary" type="submit">
-            Create
+          <Button className="modal-add-character-btn" variant="primary" type="submit">
+            Add
           </Button>
         </Form>
       </Modal.Body>
