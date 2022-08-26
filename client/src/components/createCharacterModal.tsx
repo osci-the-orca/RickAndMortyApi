@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
+import "../components/createCharacterModal.css";
 import Character from "../models/characterModel";
 
 interface Props {
   onNewCharacter: (character: Character) => void;
+  onHide: () => void;
 }
 
 export default function CreateCharacterModal(props: Props) {
@@ -19,99 +21,51 @@ export default function CreateCharacterModal(props: Props) {
 
     const resultCharacter = await response.json();
 
-    if (!resultCharacter.name) {
-      console.log("funka");
-    } else props.onNewCharacter(resultCharacter);
+    props.onNewCharacter(resultCharacter);
   }
 
   function handleChange(e: any) {
-    setCharacter({ ...character, [e.target.name]: e.target.value });
+    if (character) {
+      setCharacter({ ...character, [e.target.name]: e.target.value });
+    }
+  }
+
+  function handleSubmit(e: any) {
+    e.preventDefault();
+    if (character) {
+      createCharacter(character);
+      props.onHide();
+    }
   }
 
   return (
     <>
-      <Button variant="primary" onClick={() => setShowCreateCharacter(true)}>
-        Add Character
-      </Button>
-      <div>
-        <Modal
-          show={showCreateCharacter}
-          size="lg"
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
-          onHide={() => {
-            setShowCreateCharacter(false);
-          }}
-        >
-          <Modal.Header>Create a new character</Modal.Header>
-          <Modal.Body>
-            <Form validated>
-              <Form.Group>
-                <Form.Control
-                  onChange={handleChange}
-                  name="name"
-                  type="text"
-                  placeholder="Name"
-                  required
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Control
-                  onChange={handleChange}
-                  name="gender"
-                  type="text"
-                  placeholder="Gender"
-                  required
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Control
-                  onChange={handleChange}
-                  name="status"
-                  type="text"
-                  placeholder="Status"
-                  required
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Control
-                  onChange={handleChange}
-                  name="species"
-                  type="text"
-                  placeholder="Species"
-                  required
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Control
-                  onChange={handleChange}
-                  name="type"
-                  type="text"
-                  placeholder="Type"
-                  required
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Control
-                  onChange={handleChange}
-                  name="image"
-                  type="text"
-                  placeholder="Image url"
-                />
-              </Form.Group>
-              <Button
-                variant="primary"
-                onClick={() => {
-                  createCharacter(character);
-                  setShowCreateCharacter(false);
-                }}
-              >
-                Create
-              </Button>
-            </Form>
-          </Modal.Body>
-        </Modal>
-      </div>
+      <Modal.Header>Create a new character</Modal.Header>
+      <Modal.Body>
+        <Form className="create-character-form" validated onSubmit={handleSubmit}>
+          <Form.Group>
+            <Form.Control onChange={handleChange} name="name" type="text" placeholder="Name" required />
+          </Form.Group>
+          <Form.Group>
+            <Form.Control onChange={handleChange} name="gender" type="text" placeholder="Gender" required />
+          </Form.Group>
+          <Form.Group>
+            <Form.Control onChange={handleChange} name="status" type="text" placeholder="Status" required />
+          </Form.Group>
+          <Form.Group>
+            <Form.Control onChange={handleChange} name="species" type="text" placeholder="Species" required />
+          </Form.Group>
+          <Form.Group>
+            <Form.Control onChange={handleChange} name="type" type="text" placeholder="Type" required />
+          </Form.Group>
+          <Form.Group>
+            <Form.Control onChange={handleChange} name="image" type="url" placeholder="Image url" />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Create
+          </Button>
+        </Form>
+      </Modal.Body>
     </>
   );
 }

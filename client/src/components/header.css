@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    background-color:black;
+    position: sticky;
+    top: 0;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.add-character-btn {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    margin-right: 9rem;
+    background: none;
+    color: #06b1c8 !important; 
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+    cursor: pointer;
+    border-style: none;
+    border-radius: 10px;
+}
+
+.add-character-btn:hover, .add-character-btn:focus {
+    color: black !important;
+    background: #06b1c8;
+    box-shadow: 0 0 10px #5ae596, 0 0 40px #5ae596, 0 0 80px #5ae596;
+    transition-delay: 0.2s;
+    border-style: none;
+}

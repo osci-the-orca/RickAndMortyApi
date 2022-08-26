@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import Characters from "./components/characters";
-import CreateCharacterModal from "./components/createCharacterModal";
+import Header from "./components/header";
 import Character from "./models/characterModel";
 
 function App() {
@@ -39,12 +39,8 @@ function App() {
 
   return (
     <div className="App">
-      <CreateCharacterModal onNewCharacter={saveCharacterToState} />
-      <Characters
-        characters={characters}
-        onUpdateCharacter={updateCharacterInState}
-        onDeleteCharacter={deleteCharacterInState}
-      />
+      <Header onNewCharacter={saveCharacterToState} />
+      <Characters characters={characters} onUpdateCharacter={updateCharacterInState} onDeleteCharacter={deleteCharacterInState} />
     </div>
   );
 }
