@@ -1,12 +1,12 @@
 ### Get all characters
-GET http://localhost:3000/
+GET http://localhost:3000/api/characters/
 
 ### Get character by id
-GET http://localhost:3000/GnderSY3e
+GET http://localhost:3000/api/characters/GnderSY3e
 
 
 ### Post character
-POST http://localhost:3000/
+POST http://localhost:3000/api/characters/
 Content-Type: application/json
 
 {
@@ -18,16 +18,17 @@ Content-Type: application/json
     "image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
 }
 
+
 ### Delete character by id
-DELETE http://localhost:3000/GnderSY
+DELETE http://localhost:3000/api/characters/ZMteoCK_lxxIzAb9T0rDK
 
 ### Update character 
-PUT http://localhost:3000/WhG1moB4Py3-v
+PUT http://localhost:3000/api/characters/p34MpnVHm77VYCWvOwZrb
 Content-Type: application/json
 
 {
-    "id": "WhG1moB4Py3-vADbE_cQC",
-    "name": "updated character",
+    "id": "p34MpnVHm77VYCWvOwZrb",
+    "name": "updated character333",
     "status": "unknown",
     "species": "Dog",
     "type": "Science experiment",
