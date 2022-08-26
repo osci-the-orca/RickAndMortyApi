@@ -2,11 +2,8 @@ import express from "express";
 require("express-async-errors");
 const cors = require("cors");
 
-
 import { errorHandler, Logger, notFoundHandler } from "./middlewares";
 import { charactersRouter } from "./resources/characters/characters.router";
-
-
 
 const app = express();
 
