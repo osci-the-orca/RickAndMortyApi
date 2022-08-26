@@ -10,11 +10,7 @@ interface Props {
   onDeleteCharacter: (character: Character) => void;
 }
 
-function Characters({
-  characters,
-  onUpdateCharacter,
-  onDeleteCharacter,
-}: Props) {
+function Characters({ characters, onUpdateCharacter, onDeleteCharacter }: Props) {
   const [selectedCharacter, setSelectedCharacter] = useState<Character>();
 
   function deleteCharacter() {
@@ -44,11 +40,7 @@ function Characters({
 
   const charactersElement = characters.map((item: Character) => {
     return (
-      <div
-        key={item.id}
-        className="character-card"
-        onClick={() => setSelectedCharacter(item)}
-      >
+      <div key={item.id} className="character-card" onClick={() => setSelectedCharacter(item)}>
         <div className="character-img-div">
           <img className="character-img" src={item.image} />
         </div>
