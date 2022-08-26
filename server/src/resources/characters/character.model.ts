@@ -7,16 +7,17 @@ export interface Character {
     species: string,
     type: string,
     gender: string,
-    image?: string
+    image: string
 };
 
-export const characterSchema = Joi.object<Character, false>({
+export const characterSchema = Joi.object<Character, true>({
     id: Joi.string().required(),
     name: Joi.string().required(),
     status: Joi.string().required(),
     species: Joi.string().required(),
     type: Joi.string().required(),
-    gender: Joi.string().required()
+    gender: Joi.string().required(),
+    image: Joi.string()
 });
 
 
