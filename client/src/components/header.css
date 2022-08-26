@@ -1,19 +1,25 @@
+.header-container {
+    width: 100vw;
+    background-color: black;
+    z-index: 200;
+}
+
 .header {
     display: flex;
     background-color:black;
     position: sticky;
     top: 0;
     align-items: center;
-    width: 100%;
+    max-width: 80vw;
     justify-content: space-between;
     z-index: 10;
+    margin: auto;
 }
 
 .add-character-btn {
     position: relative;
     display: inline-block;
     padding: 15px 30px;
-    margin-right: 9rem;
     background: none;
     color: #06b1c8 !important; 
     text-transform: uppercase;
@@ -30,7 +36,7 @@
 .add-character-btn:hover, .add-character-btn:focus {
     color: black !important;
     background: #06b1c8;
-    box-shadow: 0 0 10px #5ae596, 0 0 40px #5ae596, 0 0 80px #5ae596;
+    box-shadow: 0 0 30px #5ae596, 0 0 20px #5ae596, 0 0 10px #5ae596;
     transition-delay: 0.2s;
     border-style: none;
 }
