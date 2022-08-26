@@ -29,7 +29,7 @@ Returns all characters in `RickAndMortyData.json`
 
 ### `GET <localhost>/api/characters/id/{ID}`
 
-Returns a character object which has the id
+Returns a character object with the id
 
 #
 
@@ -45,6 +45,27 @@ To post a new character
     "type": "type",
     "image": "imgURL"
 ```
+
+### `PUT <localhost>/api/characters/{ID}`
+
+Updates the character with the id
+
+```json
+    "name": "updated name",
+    "gender": "updated gender",
+    "status": "updated status",
+    "species": "updated species",
+    "type": "updated type",
+    "image": "updated imgURL"
+```
+
+#
+
+### `DELETE <localhost>/api/characters/{ID}`
+
+Deletes the character with the id
+
+#
 
 Requirements:
 
